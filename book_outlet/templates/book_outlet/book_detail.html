@@ -1,0 +1,35 @@
+{% extends "book_outlet/base.html" %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<h1>{{ book.title }}</h1>
+<h2>by {{ book.author.full_name }}</h2>
+
+<div class="stats">
+    <p><strong>Rating:</strong> <span class="rating">{{ book.rating }}</span></p>
+    {% if book.is_bestselling %}
+    <p><span class="bestseller">Bestseller!</span></p>
+    {% endif %}
+</div>
+
+<section class="author-info">
+    <h3>Author Information</h3>
+    <p><strong>Address:</strong> {{ book.author.address }}</p>
+</section>
+
+<section class="countries-section">
+    <h3>Published In:</h3>
+    <ul class="country-list">
+        {% for country in book.published_countries.all %}
+        <li class="country-tag">
+            {{ country.name }}
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<p class="back-link"><a href="/">&larr; Back to all books</a></p>
+{% endblock %}
