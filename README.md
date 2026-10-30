@@ -29,25 +29,37 @@ The **Book Store** project focuses on complex database schema design. It allows 
 
 ### 🚀 Getting Started
 
-1. **Clone the repository:** 
+
+1. **Clone the repository:**
+    
    git clone https://github.com/MarkosyanShooshan/book-store.git
    cd book-store
+   
 Create and activate virtual environment:
+
 Windows:
 python -m venv venv
 venv\Scripts\activate
+
 macOS / Linux:
 python3 -m venv venv
 source venv/bin/activate
+
 Install dependencies:
 pip install -r requirements.txt
+
 Apply database migrations:
 python manage.py migrate
+
 Create a superuser (optional, for Admin Panel):
 python manage.py createsuperuser
+
 Run development server:
 python manage.py runserver
+
 Open http://127.0.0.1:8000/ in your browser.
+
+
 
 
 
